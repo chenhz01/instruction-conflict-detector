@@ -2,6 +2,8 @@
 
 A stdlib-only, offline auditor that reads a system prompt as plain text and flags internal contradictions: positive/negative rule conflicts on the same subject, duplicated rules, undeclared priority between rules sharing a subject, and circular override chains ("Rule 1 overrides Rule 2 ..."). Zero network, zero model calls — if you merge prompt fragments from multiple authors, use this; otherwise skip it.
 
+<p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
+
 ## Problem
 
 System prompts accrete. Ten authors add rules; "Always answer in English" survives next to "Never answer in English", two rules fight for the same behavior with no declared winner, and an override chain quietly becomes a cycle. Models resolve these arbitrarily at runtime. A static, deterministic text audit catches the contradictions before deployment.
