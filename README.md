@@ -1,5 +1,13 @@
 # instruction-conflict-detector
 
+> **Current version → [`chenhz01/instruction-gate`](https://github.com/chenhz01/instruction-gate)**
+>
+> The same tool, finished: the CLI is identical flag-for-flag (compare the two
+> `--help` outputs yourself), `examples/` are committed so a fresh clone reproduces
+> the documented output, CI asserts the exit code of that example — so the badge can
+> actually turn red — and there is a self-check you can rerun on your own machine
+> (`python tools/hotness.py`, 15 criteria). This repo remains as the earlier version.
+
 A stdlib-only, offline auditor that reads a system prompt as plain text and flags internal contradictions: positive/negative rule conflicts on the same subject, duplicated rules, undeclared priority between rules sharing a subject, and circular override chains ("Rule 1 overrides Rule 2 ..."). Zero network, zero model calls — if you merge prompt fragments from multiple authors, use this; otherwise skip it.
 
 <p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
